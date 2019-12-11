@@ -65,7 +65,7 @@ namespace Dawa.Api.Client.DawaEndpoints
         /// CASE SENSITIVE!
         /// </summary>
         /// <param name="street"></param>
-        public void AddStreetName(string street)
+        public void AddStreetName(int street)
         {
             AddOrUpdate("vejnavn", street);
         }

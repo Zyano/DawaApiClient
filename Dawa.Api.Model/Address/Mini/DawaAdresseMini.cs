@@ -9,13 +9,13 @@ namespace Dawa.Api.Model.Address.Mini
         public Guid Id { get; set; }
 
         [JsonProperty("status")]
-        public long Status { get; set; }
+        public int Status { get; set; }
 
         [JsonProperty("darstatus")]
-        public long Darstatus { get; set; }
+        public int Darstatus { get; set; }
 
         [JsonProperty("vejkode")]
-        public long Vejkode { get; set; }
+        public int Vejkode { get; set; }
 
         [JsonProperty("vejnavn")]
         public string Vejnavn { get; set; }
@@ -24,28 +24,28 @@ namespace Dawa.Api.Model.Address.Mini
         public string Adresseringsvejnavn { get; set; }
 
         [JsonProperty("husnr")]
-        public long Husnr { get; set; }
+        public string Husnr { get; set; }
 
         [JsonProperty("etage")]
         public string Etage { get; set; }
 
         [JsonProperty("dør")]
-        public long Dør { get; set; }
+        public string Dør { get; set; }
 
         [JsonProperty("supplerendebynavn")]
         public object Supplerendebynavn { get; set; }
 
         [JsonProperty("postnr")]
-        public long Postnr { get; set; }
+        public int Postnr { get; set; }
 
         [JsonProperty("postnrnavn")]
         public string Postnrnavn { get; set; }
 
         [JsonProperty("stormodtagerpostnr")]
-        public object Stormodtagerpostnr { get; set; }
+        public int? Stormodtagerpostnr { get; set; }
 
         [JsonProperty("stormodtagerpostnrnavn")]
-        public object Stormodtagerpostnrnavn { get; set; }
+        public string Stormodtagerpostnrnavn { get; set; }
 
         [JsonProperty("kommunekode")]
         public string Kommunekode { get; set; }
