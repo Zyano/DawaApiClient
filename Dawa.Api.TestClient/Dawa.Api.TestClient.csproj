@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dawa.Api.Model\Dawa.Api.Model.csproj" />
+    <ProjectReference Include="..\DawaApiClient\Dawa.Api.Client.csproj" />
+  </ItemGroup>
+
+</Project>
