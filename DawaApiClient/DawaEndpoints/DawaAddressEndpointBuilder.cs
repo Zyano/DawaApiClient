@@ -65,7 +65,7 @@ namespace Dawa.Api.Client.DawaEndpoints
         /// CASE SENSITIVE!
         /// </summary>
         /// <param name="street"></param>
-        public void AddStreetName(int street)
+        public void AddStreetName(string street)
         {
             AddOrUpdate("vejnavn", street);
         }
@@ -100,6 +100,29 @@ namespace Dawa.Api.Client.DawaEndpoints
                 throw new ArgumentException("Input most not exceed 1 characters ", nameof(letter));
             }
             AddOrUpdate("husnr", houseNumber.ToString() + letter ?? "");
+        }
+
+        public void AddFloor(string floor)
+        {
+            if (floor.Length > 2)
+            {
+                throw new ArgumentException("Floor legnth cannot exceed 2 characters", nameof(floor));
+            }
+            AddOrUpdate("etage", floor);
+        }
+
+        public void AddDoor(string door)
+        {
+            if (door.Length > 4)
+            {
+                throw new ArgumentException("Floor legnth cannot exceed 4 characters", nameof(door));
+            }
+            AddOrUpdate("dør", door);
+        }
+
+        public void AddHouseNumber(string houseNumber)
+        {
+            AddOrUpdate("husnr", houseNumber);
         }
 
         public void AddStreetCode(int streetCode)
