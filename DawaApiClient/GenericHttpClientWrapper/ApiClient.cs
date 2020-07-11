@@ -26,10 +26,12 @@ namespace Dawa.Api.Client.GenericHttpClientWrapper
             };
             if (!response.IsSuccessStatusCode)
             {
+                var errorResponse = await response.Content.ReadAsStringAsync();
+                result.ErrorResponse = errorResponse;
                 return result;
             }
-            var jsonResponse = await response.Content.ReadAsStringAsync();
-            var jsonObj = JsonConvert.DeserializeObject<T>(jsonResponse);
+            var rawResponse = await response.Content.ReadAsStringAsync();
+            var jsonObj = JsonConvert.DeserializeObject<T>(rawResponse);
             result.Result = jsonObj;
 
             return result;

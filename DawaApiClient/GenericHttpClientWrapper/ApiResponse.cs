@@ -11,6 +11,8 @@ namespace Dawa.Api.Client.GenericHttpClientWrapper
 
         public string ResponsePhrase { get; set; }
 
+        public string ErrorResponse { get; set; }
+
         public T Result { get; set; }
     }
 }

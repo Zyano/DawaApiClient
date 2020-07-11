@@ -30,11 +30,25 @@ namespace Dawa.Api.Client.DawaEndpoints
                 var kv = kvList[i];
                 if (i == 0)
                 {
-                    url += $"?{kv.Key}={HttpUtility.UrlEncode(kv.Value.ToString())}";
+                    if (kv.Value == null)
+                    {
+                        url += $"?{kv.Key}";
+                    }
+                    else
+                    {
+                        url += $"?{kv.Key}={HttpUtility.UrlEncode(kv.Value.ToString())}";
+                    }
                 }
                 else
                 {
-                    url += $"&{kv.Key}={HttpUtility.UrlEncode(kv.Value.ToString())}";
+                    if (kv.Value == null)
+                    {
+                        url += $"&{kv.Key}";
+                    }
+                    else
+                    {
+                        url += $"&{kv.Key}={HttpUtility.UrlEncode(kv.Value.ToString())}";
+                    }
                 }
             }
 
@@ -132,6 +146,11 @@ namespace Dawa.Api.Client.DawaEndpoints
                 throw new ArgumentException("Input most not exceed 4 characters and by larger than zero", nameof(streetCode));
             }
             AddOrUpdate("vejkode", streetCode);
+        }
+
+        public void DisablePrintResponse()
+        {
+            AddOrUpdate("noformat", null);
         }
 
         private void AddOrUpdate(string key, object value)
